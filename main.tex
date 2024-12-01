@@ -16,11 +16,17 @@
 
 \maketitle
 
-\section{Problema}
+\section{Introdução}
 
-\section{Metodologia}
+\paragraph{}Em linguagens de programação que utilizam \textbf{coletores de lixo} (\textit{garbage collectors}), \textbf{coletores de lixo concorrentes} (\textit{concurrent garbage collectors}) são prejudiciais ao desempenho das aplicações. Para aplicações sensíveis à latência, foram desenvolvidos coletores de lixo que fazem o uso de \textbf{tempos curtos de pausa} (\textit{low pause times}). O principal problema encontrado nesses coletores é que eles obtêm um curto tempo de pausa à custa da CPU e da memória. Além disso, foi provado que esses coletores de lixo não necessariamente resultam em uma baixa latência para a aplicação.
 
-\section{Validação}
+\paragraph{}Foi proposto o desenvolvimento de um novo coletor de lixo, chamado \textbf{LXR} (\textit{Latency-critical ImmiX with Reference counting}), que visa a solucionar o problema dos coletores de lixo de tempos curtos. O seu desenvolvimento foi feito baseado na premissa de que \textbf{coletas que param o mundo} (\textit{stop-the-world collections}) entregam maior responsividade em conjunto com uma maior eficiência que \textbf{avaliação concorrente} (\textit{concurrent evaluation}). Além disso, foram utilizados os seguintes algoritmos: \textbf{RCImmix} (\textit{Reference Counting Immix}) e \textbf{SATB} (\textit{Yuasa’s Snapshot At The Beginning}).
+
+\paragraph{}Foram realizados testes de desempenho entre o coletor de lixo desenvolvido, LXR, com os coletores: \textbf{G1} (\textit{Garbage First}), \textbf{C4}, \textbf{Shenandoah} e \textbf{ZGC}. Através desses testes, foi possível identificar quais coletores de lixo produzem as melhores métricas de desempenho para cada métrica avaliada.
+
+\section{Desenvolvimento}
+
+\section{Conclusão}
 
 
 \bibliographystyle{sbc}
