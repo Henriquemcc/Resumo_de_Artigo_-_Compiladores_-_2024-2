@@ -7,7 +7,7 @@
 
 \sloppy
 \title{Resumo: Low-Latency, High-Throughput Garbage Collection}
-\author{Henrique Mendonça Castelar Campos}
+\author{Henrique Mendonça Castelar Campos - 618557}
 
 \address{}
 \def\instnum{} % Making \instnum empty
@@ -25,6 +25,10 @@
 \paragraph{}Foram realizados testes de desempenho entre o coletor de lixo desenvolvido, LXR, com os coletores: \textbf{G1} (\textit{Garbage First}), \textbf{C4}, \textbf{Shenandoah} e \textbf{ZGC}. Através desses testes, foi possível identificar quais coletores de lixo produzem as melhores métricas de desempenho para cada métrica avaliada.
 
 \section{Desenvolvimento}
+
+\paragraph{}O LXR foi implementado no \textbf{MMTk} (\textit{Memory Management Toolkit}), framework de gerenciamento de memória, no \textit{Open JDK 11}. Isso permitiu que aplicações java existentes pudessem ser utilizadas para a realização de testes de desempenho.
+
+\paragraph{}Para a realização dos testes de desempenho, foi utilizada a plataforma \textbf{DaCapo benchmark suite}. Nesta plataforma, foram executadas as seguintes aplicações: \textbf{cassandra}, \textbf{h2}, \textbf{lusearch} e \textbf{tomcat}. E foram coletadas as latências dessas aplicações, que foram executadas com os coletores de lixo: G1, LXR, Shenandoah e ZGC.
 
 \section{Conclusão}
 
